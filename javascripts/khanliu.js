@@ -1,3 +1,3 @@
 $("#about").click(function() {
-	alert("alert");
+	alert("alert kahnliu");
 })
