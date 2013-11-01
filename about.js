@@ -1,3 +1,1 @@
-
-window.hi = "lcyang";
-
+test({"name":"khanliu","age":22})
