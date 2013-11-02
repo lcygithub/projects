@@ -1,3 +1,12 @@
 p {
-  width: expression(alert(/XSS/))();
+  width: expression(alert("p"))();
+}
+
+#d1 {
+  width: expression(function(){alert("d1")})();
+  
+}
+
+#d2 {
+  width: expression((function(){alert("d1")})());
 }
