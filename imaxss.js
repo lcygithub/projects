@@ -1,8 +1,8 @@
-function xss(content) {
+function xss(content, tid) {
 	this.url = "/?a=addReply",
 	this.data = {
 		'reply_content': typeof content != "undefined" ? content : '学习了<img src="1" onerror="console.log(/error/)" alt="" />',
-		'tiezi_id': '580'
+		'tiezi_id': typeof tid != "undefined" ? tid : '580'
 	},
 	this.callback = function (data) {
 		console.log(data);
