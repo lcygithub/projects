@@ -25,7 +25,7 @@ xss.prototype = {
 		function get(url) {
 			$.get(url, function(data) {
 				console.log(data);
-			}
+			});
 		}
 	}
 }
