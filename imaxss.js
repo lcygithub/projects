@@ -9,13 +9,13 @@ function xss(content, tid) {
 	}
 }
 xss.prototype = {
-	post: function () {
-		$.post(this.url, this.data, this.callback);
+	post: function (callback) {
+		$.post(this.url, this.data, typeof callback != "undefined"? callback : this.callback);
 	},
 	ch : function (str) {
 		return "&#" + str.split("").map(function(data) {return data.charCodeAt();}).join("&#");
 	},
-	del : function () {
+	del : function (callback) {
 		var ids = $(".reply").map(function(data, index) {return (index.id+"").split("-")[1]});
 		var tid = location.href.split("&").map(function(index, data) {if(index.match("id")){return index;}})[1].split("=")[1];
 		for(var i = 0, l = ids.length; i<l; i++) {
@@ -23,9 +23,7 @@ xss.prototype = {
 			setTimeout(get(url), 20);
 		}
 		function get(url) {
-			$.get(url, function(data) {
-				console.log(data);
-			});
+			$.get(url, typeof callback != "undefined"? callback : this.callback);
 		}
 	}
 }
