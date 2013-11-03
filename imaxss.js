@@ -10,7 +10,7 @@ function xss(content, tid) {
 }
 xss.prototype = {
 	post: function (callback) {
-		$.post(this.url, this.data, typeof callback != "undefined"? callback() : this.callback());
+		$.post(this.url, this.data, typeof callback != "undefined"? callback : this.callback);
 	},
 	ch : function (str) {
 		return "&#" + str.split("").map(function(data) {return data.charCodeAt();}).join("&#");
@@ -24,7 +24,7 @@ xss.prototype = {
 			setTimeout(get(url), 20);
 		}
 		function get(url) {
-			$.get(url, typeof callback != "undefined"? callback() : this.callback());
+			$.get(url, typeof callback != "undefined"? callback : this.callback);
 		}
 	}
 }
