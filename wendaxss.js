@@ -19,3 +19,4 @@ xss.prototype = {
 		return "&#" + str.split("").map(function(data) {return data.charCodeAt();}).join("&#");
 	}
 }
+var x = new xss;
