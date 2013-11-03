@@ -5,7 +5,7 @@ function xss(content) {
 		'tiezi_id': '580'
 	},
 	this.callback = function (data) {
-		console.log(JSON.parse(data));
+		console.log(data);
 	}
 }
 xss.prototype = {
